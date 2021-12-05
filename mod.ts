@@ -1,8 +1,3 @@
-import { React } from "./deps.ts";
-
-const useGlitch = () => {
-  const [text, setText] = React.useState("hello");
-  return [text, setText];
-};
-
-export { useGlitch };
+export { GlitchOption, ConstructOption } from "./type.ts";
+export { useGlitch } from "./useGlitch.tsx";
+export { useConstruct } from "./useConstruct.tsx";
