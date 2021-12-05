@@ -1,6 +1,6 @@
 import { React } from "./deps.ts";
 import { getRandomChar } from "./util.ts";
-import { GlitchOption } from "./type.ts";
+import type { GlitchOption } from "./type.ts";
 
 const getGlitchedChar = (
   char: string,

@@ -1,6 +1,6 @@
 import { React } from "./deps.ts";
 import { getRandomChar, getElapsed } from "./util.ts";
-import { ConstructOption } from "./type.ts";
+import type { ConstructOption } from "./type.ts";
 
 const getConstructedChar = (
   char: string,
