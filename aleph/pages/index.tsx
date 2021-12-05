@@ -1,17 +1,26 @@
 import { useDeno } from "aleph/react";
 import React from "react";
 import Logo from "~/components/logo.tsx";
-import useCounter from "~/lib/useCounter.ts";
 import {
   useGlitch,
+  useConstruct,
   GlitchOption,
+  ConstructOption,
 } from "https://raw.githubusercontent.com/ganyariya/text_glitch/main/mod.ts";
 
 export default function Home() {
-  const [count, isSyncing, increase, decrease] = useCounter();
   const version = useDeno(() => Deno.version.deno);
 
-  const [text, setText] = useGlitch();
+  const [constructOption, _] = React.useState<Partial<ConstructOption>>({
+    updateInterval: 100,
+  });
+  const [glitchText, setGlitchText] = useGlitch();
+  const [constructText, setConstructText] = useConstruct(constructOption);
+
+  React.useEffect(() => {
+    setConstructText("This is Construct Text.");
+    setGlitchText("This is Glitch Text.");
+  }, []);
 
   return (
     <div className="page">
@@ -22,34 +31,9 @@ export default function Home() {
       <p className="logo">
         <Logo />
       </p>
-      <h1>
-        Welcome to use <strong>Aleph.js</strong>!
-      </h1>
-      <p className="links">
-        <a href="https://alephjs.org" target="_blank">
-          Website
-        </a>
-        <span></span>
-        <a href="https://alephjs.org/docs/get-started" target="_blank">
-          Get Started
-        </a>
-        <span></span>
-        <a href="https://alephjs.org/docs" target="_blank">
-          Docs
-        </a>
-        <span></span>
-        <a href="https://github.com/alephjs/aleph.js" target="_blank">
-          Github
-        </a>
-      </p>
-      <div className="counter">
-        <span>Counter:</span>
-        {isSyncing && <em>...</em>}
-        {!isSyncing && <strong>{count}</strong>}
-        <button onClick={decrease}>-</button>
-        <button onClick={increase}>+</button>
-      </div>
-      <p className="copyinfo">Built by Aleph.js in Deno {version}</p>
+      <h1>{version}</h1>
+      <h1>{constructText}</h1>
+      <h1>{glitchText}</h1>
     </div>
   );
 }
