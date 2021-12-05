@@ -11,6 +11,8 @@ export default function Home() {
   const [count, isSyncing, increase, decrease] = useCounter();
   const version = useDeno(() => Deno.version.deno);
 
+  const [text, setText] = useGlitch();
+
   return (
     <div className="page">
       <head>
