@@ -5,7 +5,7 @@
 [![tag](https://img.shields.io/github/v/tag/ganyariya/vsexclude?sort=semver)](https://github.com/ganyariya/vsexclude/tags)
 
 <p align="center">
-  <img width="400" src="./aleph/public/glitch.gif">
+  <img width="400" src="./aleph/public/glitch.jpg">
 </p>
 
 Glitch Text Library for Deno & React!
