@@ -26,8 +26,11 @@ export default function Home() {
       <p className="logo">
         <Logo />
       </p>
-      <h1>{constructText}</h1>
       <h1>{glitchText}</h1>
+      <br />
+      <a href="https://github.com/ganyariya/text_glitch/blob/main/aleph/pages/index.tsx">
+        <h1>{constructText}</h1>
+      </a>
     </div>
   );
 }
