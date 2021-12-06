@@ -37,9 +37,10 @@ const defualtOption: GlitchOption = {
 };
 
 const useGlitch = (
+  setupText = "",
   option?: Partial<GlitchOption>
 ): [string, React.Dispatch<React.SetStateAction<string>>] => {
-  const [text, setText] = React.useState("");
+  const [text, setText] = React.useState(setupText);
   const [glitchedText, setGlitchedText] = React.useState("");
 
   const useOption: GlitchOption = { ...defualtOption, ...option };
