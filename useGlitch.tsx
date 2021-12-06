@@ -18,7 +18,7 @@ const getGlitchedChar = (
   return char;
 };
 
-const getClitchedText = (
+const getGlitchedText = (
   text: string,
   mutate: number,
   deleteMutate: number,
@@ -37,9 +37,10 @@ const defualtOption: GlitchOption = {
 };
 
 const useGlitch = (
+  setupText = "",
   option?: Partial<GlitchOption>
 ): [string, React.Dispatch<React.SetStateAction<string>>] => {
-  const [text, setText] = React.useState("");
+  const [text, setText] = React.useState(setupText);
   const [glitchedText, setGlitchedText] = React.useState("");
 
   const useOption: GlitchOption = { ...defualtOption, ...option };
@@ -47,7 +48,7 @@ const useGlitch = (
   React.useEffect(() => {
     const clearId = setInterval(() => {
       setGlitchedText(
-        getClitchedText(
+        getGlitchedText(
           text,
           useOption.mutate,
           useOption.deleteMutate,
