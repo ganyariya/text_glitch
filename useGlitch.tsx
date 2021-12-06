@@ -18,7 +18,7 @@ const getGlitchedChar = (
   return char;
 };
 
-const getClitchedText = (
+const getGlitchedText = (
   text: string,
   mutate: number,
   deleteMutate: number,
@@ -47,7 +47,7 @@ const useGlitch = (
   React.useEffect(() => {
     const clearId = setInterval(() => {
       setGlitchedText(
-        getClitchedText(
+        getGlitchedText(
           text,
           useOption.mutate,
           useOption.deleteMutate,
