@@ -1,4 +1,3 @@
-import { useDeno } from "aleph/react";
 import React from "react";
 import Logo from "~/components/logo.tsx";
 import {
@@ -9,18 +8,14 @@ import {
 } from "https://raw.githubusercontent.com/ganyariya/text_glitch/main/mod.ts";
 
 export default function Home() {
-  const version = useDeno(() => Deno.version.deno);
-
   const [constructOption, _] = React.useState<Partial<ConstructOption>>({
     updateInterval: 100,
   });
-  const [glitchText, setGlitchText] = useGlitch();
-  const [constructText, setConstructText] = useConstruct(constructOption);
-
-  React.useEffect(() => {
-    setConstructText("This is Construct Text.");
-    setGlitchText("This is Glitch Text.");
-  }, []);
+  const [glitchText, setGlitchText] = useGlitch("Text Glitch Library");
+  const [constructText, setConstructText] = useConstruct(
+    "Sample Aleph Project",
+    constructOption
+  );
 
   return (
     <div className="page">
@@ -31,7 +26,6 @@ export default function Home() {
       <p className="logo">
         <Logo />
       </p>
-      <h1>{version}</h1>
       <h1>{constructText}</h1>
       <h1>{glitchText}</h1>
     </div>
