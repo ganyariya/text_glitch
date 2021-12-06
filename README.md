@@ -1,8 +1,8 @@
 # 🦕 Text Glitch
 
-[![deno.land](https://img.shields.io/badge/deno-%5E1.13.2-green?logo=deno)](https://deno.land)
+[![deno.land](https://img.shields.io/badge/deno-%5E1.16.3-green?logo=deno)](https://deno.land)
 [![LICENSE](https://img.shields.io/badge/license-MIT-brightgreen)](LICENSE)
-[![tag](https://img.shields.io/github/v/tag/ganyariya/vsexclude?sort=semver)](https://github.com/ganyariya/vsexclude/tags)
+[![tag](https://img.shields.io/github/v/tag/ganyariya/text_glitch?sort=semver)](https://github.com/ganyariya/vsexclude/tags)
 
 <p align="center">
   <img width="400" src="./aleph/public/glitch.jpg">
@@ -57,6 +57,9 @@ function Sample() {
 ### 🦕 Contribute
 
 🦕🦕🦕 Welcome for your any PRs! 🦕🦕🦕
+
+### 🦕 Thanks for
+[use-dencrypt-effect](https://github.com/crazko/use-dencrypt-effect)
 
 ### 🦕 TODO
 
