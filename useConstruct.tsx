@@ -33,9 +33,10 @@ const defualtOption: ConstructOption = {
 };
 
 const useConstruct = (
+  setupText = "",
   option?: Partial<ConstructOption>
 ): [string, React.Dispatch<React.SetStateAction<string>>] => {
-  const [text, setText] = React.useState("");
+  const [text, setText] = React.useState(setupText);
   const [constructed, setConstructed] = React.useState(false);
   const [constructedText, setConstructedText] = React.useState("");
   const [constructedDate, setConstructedDate] = React.useState(new Date());
